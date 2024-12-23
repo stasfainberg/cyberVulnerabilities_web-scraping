@@ -1,5 +1,5 @@
 # My Cyber vulnerabilities web-scraping project 
-## Performing web-scaping from the national Israeli Cyber web site
+## Performing web-scaping from the Israeli national Cyber web site
 ### I want to be updated for <ins>new vulnerabilities</ins> update
 
 **Stas Fainberg**
