@@ -4,8 +4,29 @@ import time
 import hashlib
 
 # URL of the website to monitor
-url = "https://example.com/publications"
+#url = "https://www.gov.il/he/collectors/publications?skip=0&limit=10&Type=f2d28b83-ce5f-4ce3-a164-3fd0383b405a"
+url = "https://www.gov.il/he/collectors/publications?Type=f2d28b83-ce5f-4ce3-a164-3fd0383b405a"
 
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+}
+
+def main():
+    try:
+        session = requests.Session()
+        response = session.get(url, headers=headers)
+        #response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Ensure the request was successful
+        print(f"##### response: {response.text}")
+    except requests.RequestException as e:
+        print(f"Error fetching the website: {e}")
+
+
+if __name__ == '__main__':
+    main()
+
+
+"""
 # Function to fetch and parse the webpage
 def fetch_publications():
     try:
@@ -43,3 +64,4 @@ previous_hash = ""
 while True:
     monitor_publications()
     time.sleep(60)  # Check every 60 seconds
+"""
